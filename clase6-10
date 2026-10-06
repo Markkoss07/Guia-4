@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+/// declaracion de funciones //declara las funciones y despues abajo implementa las funciones
+int pedirNumeroEntre(int inicio, int fin);
+float pedirNumero();
+void Linea();
+void Saludar(string nombre);
+float sumar (float n1, float n2);
 
 /**
     // esta es la forma mas completa de una funcion:
@@ -35,9 +41,36 @@ void Saludar(string nombre){
 /*void Saludar(){
     cout << "Hola Abel!" << endl;
 }*/ // lo toma como error porq hay dos con el mismo nombre
+///una funcion que reciba parametros parametros y devuelva valor
+
+float sumar (float n1, float n2){
+    return n1 + n2;
+}
+
+///que no reciba parametros pero devuelva un valor
+float pedirNumero(){
+    float n;
+    cout << "Ingrese un numero: " << endl;
+    cin >> n;
+    return n;
+}
+
+int pedirNumeroEntre(int inicio, int fin){
+    //como hacemos las validadciones
+    int num;
+
+    do{
+        num = pedirNumeroEntre();
+        if(num < inicio || num > fin){
+            cout << "Valor fuera de rango" << endl;
+        }
+    }while(num < inicio || num > fin);
+    return num;
+}
+
 
 int main () {   // main es nuestra funcion principal, el punto de entrada.
-
+float r;
 Linea();//para poder configurar la linea recta y no espaciada. buscamos en ASCII
         // y la aplicamos con ALT + nuestro codigo.
 //Esto no se va a mostrar como queremos por el set de caracteres diferentes a nuestro programa
@@ -46,7 +79,11 @@ Linea();//para poder configurar la linea recta y no espaciada. buscamos en ASCII
 Linea();
 Saludar("Brian!");
 Saludar("Abel!");
+r= sumar (2, 5);
+cout << r << endl;
 
 
+float  num = pedirNumeroEntre(1, 10);
+cout << "El dato ingresa es: " << num << endl;
 return 0;
 }
