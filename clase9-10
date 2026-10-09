@@ -1,0 +1,119 @@
+/**
+Escribir una funcion que reviba dos numeros enteros y retornar su suma
+*/
+
+#include <iostream>
+using namespace std;
+
+//Declaracion (encabezado, firma, prototipo)
+int sumar (int numero1, int numero2);
+
+//Definicion
+/*Esta definicion se la puede colocar en cualquier lugar menos en
+el main
+*/
+int sumar (int numero1, int numero2){
+    /*estos parametros se define por valor en caso q alguna letra
+    le ponga un numero entero.
+    */
+    int resultado;
+    resultado = numero1 + numero2;
+    return resultado;
+}
+
+int main () {
+int a, b, r;
+
+cout << "Ingrese dos numeros: " << endl;
+cin >> a >> b;
+
+r = sumar(a, b);//esto se termina transformando en un entero
+
+cout << "El resultado de la suma es: " << r <<endl;
+
+return 0;
+}
+
+
+                                        /* Ejercicio en clases */
+
+/*Hacer una funcion que reciba la hora del dia y el nombre de
+la persona que muestre "Buenos dias xxxx", "Buenas tardes xxxx",
+ o "Buenas noches xxxx"
+ segun corresponda*/
+
+#include <iostream>
+
+using namespace std;
+void saludar (int hora, string nombre); // firma
+//void saludar (int &hora, string &nombre)
+
+int main () {
+int hora;
+string persona;
+
+cout << "Hora: ";
+cin >> hora;
+
+cout << "Nombre: ";
+cin >> persona;
+
+saludar(hora, persona);
+return 0;
+}
+
+void saludar (int hora, string nombre){
+    //void saludar (int &hora, string &nombre)
+    /**Para pasar de un valor a referencia es de la siguiente manera
+    hora = 23
+    persona = "abel";
+    */
+    
+    
+    
+    //Si coloco en este void, modifico mis datos como hora y nombre
+    //solo afecta en mi funcion pero no en mi main
+    if (hora >= 4 && hora <= 12){
+        cout << "Buenos dias, ";
+    }else if (hora > 12 && hora <= 19){
+        cout << "Buenas tardes, ";
+    }else {
+        cout << "Buenas noches, ";
+    }
+
+    cout << nombre << endl;
+}
+
+                                    /*   OTRO EJERCICIO  */
+#include <iostream>
+
+using namespace std;
+
+/** Escribir una funcion que intercambie dos valores de dos variables
+enteras.
+*/
+void intercambiar(int &a, int &b);
+
+int main () {
+int x = 10, y = 100;
+cout << "x: " << x << endl;
+cout << "y: " << y << endl;
+intercambiar(x, y);
+cout << "x: " << x << endl;
+cout << "y: " << y << endl;
+
+
+return 0;
+}
+
+void intercambiar(int &a, int &b){
+int aux = a;
+a = b;
+b = aux;
+}
+
+
+
+
+
+
