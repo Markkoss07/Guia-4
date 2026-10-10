@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+
+/*un profesor dispone de las calificaciones dl primer parcial de sus 15 alumnos.
+Necesita un programa que permita cargar las 15 notas, calcular el promedio y listar
+la cantidad de calificaciones mayores al promedio
+*/
+
+/// con los conocimientos que tenemos hasta el momento, se puede hacer pero muy mal uso del codigo
+/// PARA PODER GUARGAR CIERTA CANTIDAD DE VARIABLES Y DESPUES PODER PEDIR ESOS DATOS
+///SE UTILIZA "VECTORES" se declara de la siguiente forma
+/**
+Vector es una capacidad de variable que se puede guardar muchos datos
+int notas[15] -> ejemplo del ejercicio
+indexacion en base 0, quiere decir que el primer elemento empieza en la pocision 0
+En vectores los vectores son siempre ENTEROS
+
+*/
+int main () {
+
+/*int mivector[4];
+
+mivector[0] = 100;
+mivector[1] = 200;
+mivector[2] = 300;
+mivector[3] = 400;
+
+int p;
+for (p = 0; p < 4; p++){
+
+cout << "elementos: " << mivector[p] << endl;
+}
+*/
+const int TAM = 5;
+int notas[TAM], suma = 0, cantEsMaoyorAlPromedio = 0;
+int p;
+float promedio;
+
+///Cargar el vector
+for (p = 0; p < TAM; p++){
+
+cout << "Ingrese notas #: " << (p+1)<< ": " << endl;
+cin >> notas [p];
+}
+///MOstrar el vector
+for (p = 0; p < TAM; p++){
+
+cout << "Elemento en posicion: " <<p<< ": " << notas[p]<< endl;
+}
+
+///Sumar el vector
+for (p = 0; p < TAM; p++){
+    suma += notas[p];
+}
+
+promedio = (float)suma/TAM;
+cout << "El promedio: " << promedio << endl;
+
+///contar mayores al promedio
+for (p = 0; p < TAM; p++){
+    if (notas[p] > promedio ){
+        cantEsMaoyorAlPromedio++;
+    }
+}
+cout << "Cantidades mayores de notas al promedio: " << cantEsMaoyorAlPromedio << endl;
+return 0;
+}
+
+
+int main (){
+string meses[6] = ("enero", "febrero", ....);
+
+int i;
+for (i = 0)
+}
