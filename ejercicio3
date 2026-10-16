@@ -1,8 +1,9 @@
 #include <iostream>
 
 using namespace std;
-bool esPrimo(int n);
-bool esDivisible (int dividendo, int divisor);
+//bool esPrimo(int n);
+//bool esDivisible (int dividendo, int divisor);
+bool esPrimoNuevo(int n);
 
 /*Hacer una función llamada EsPrimo que determine si un número es primo o
 no. La función debe recibir el número y devolver true si es primo o false si no lo
@@ -18,17 +19,27 @@ int n;
 cout << "Ingrese numero ; ";
 cin >> n;
 
-if (esPrimo(n)){
+if (esPrimoNuevo(n)){
     cout << "Es primo" << endl;
 }else{
     cout << "No es primo" << endl;
 }
-
-
 return 0;
 }
 
-bool esPrimo(int n){
+bool esPrimoNuevo(int n) {
+    int cd = 0;
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            cd++;
+        }
+    }
+    return cd == 2;
+}
+
+
+
+/*bool esPrimo(int n){
     int cd = 0;
 
     for (int i = 1; i<=n; i++){
@@ -51,3 +62,4 @@ bool esDivisible(int dividendo, int divisor){
         return false;
     }
 }
+*/
