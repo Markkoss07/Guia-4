@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+/*Escribir una función CalcularMaximoAbsoluto que reciba dos números y
+retorne el máximo absoluto de ambos. Por ejemplo el máximo absoluto de los
+números -40 y 20 es 40.
+Hacer un programa para ingresar dos números y, utilizando
+CalcularMaximoAbsoluto, emita luego el número mayor absoluto de ambos.
+*/
+
+int ValorAbsoluto(int x) {
+    if (x < 0) {
+        return -x;
+    }
+    return x;
+}
+
+int calcularMaximoAbsoluto (int n1, int n2){
+
+    int abs1 = ValorAbsoluto(n1);
+    int abs2 = ValorAbsoluto(n2);
+    if (abs1 > abs2) {
+        return abs1;
+    }
+    return abs2;
+}
+
+
+int main(){
+
+int x, y;
+    cout << "Ingrese dos numeros: ";
+    cin >> x >> y;
+    cout << "El mayor absoluto es: " << calcularMaximoAbsoluto(x, y) << endl;
+
+
+return 0;
+}
