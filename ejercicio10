@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+/*Hacer una función llamada Clamp que reciba tres números enteros por valor:
+un valor, un mínimo y un máximo, y devuelva el valor "sujeto" al rango [mínimo,
+máximo]. Es decir, si el valor es menor al mínimo devuelve el mínimo; si es
+mayor al máximo devuelve el máximo; si está dentro del rango lo devuelve sin
+cambios.
+Ejemplos:
+Clamp(15, 0, 10) → 10
+Clamp(-3, 0, 10) → 0
+Clamp(7, 0, 10) → 7
+*/
+
+int Clamp (int valor, int minimo, int maximo){
+    if(valor < minimo){
+        return minimo;
+    }
+    if(valor > maximo){
+        return maximo;
+    }
+ return valor;
+}
+
+int main(){
+int n1, n2, n3;
+
+cout << "Ingresar tres numeros (Ej: 1 2 3): ";
+cin >> n1 >> n2 >> n3;
+
+cout << "El rango es: " << Clamp(n1, n2, n3) << endl;
+
+return 0;
+}
