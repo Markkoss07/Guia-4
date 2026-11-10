@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+void descomponerTiempo (int cantSegundos, int &hora, int &minutos, int &segundos);
+/*Hacer una función llamada DescomponerTiempo que reciba una cantidad de
+segundos (entero positivo) por valor y por referencia otras tres variables
+(enteras para las horas, minutos y segundos) donde se cargarán las cantidades
+equivalentes calculadas.
+La función no debe mostrar nada por pantalla.
+Ejemplos:
+3661 segundos → 1 hora, 1 minuto, 1 segundo.
+7384 segundos → 2 horas, 3 minutos, 4 segundos.
+*/
+
+void descomponerTiempo (int cantSegundos, int &hora, int &minutos, int &segundos){
+//int hora = 3600, minutos = 60, segundos = 1;
+
+    hora = cantSegundos / 3600;
+    minutos = (cantSegundos % 3600) / 60;
+    segundos = cantSegundos % 60;
+
+}
+
+
+int main(){
+int cantidad, h, m, s;
+
+cout << "Ingresar la cantidad de tiempo en segundos: ";
+cin >> cantidad;
+descomponerTiempo(cantidad, h, m, s);
+cout << cantidad << "seg " << endl<<
+h << "hs " << m << "min " << s <<"seg ";
+
+return 0;
+}
