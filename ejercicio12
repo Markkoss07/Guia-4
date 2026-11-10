@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+/*Hacer una función llamada InvertirNumero que reciba un número entero
+positivo por valor y devuelva el número con sus dígitos invertidos. La función no
+debe mostrar nada por pantalla.
+Ejemplos:
+InvertirNumero(1234) → 4321
+InvertirNumero(980) → 89
+InvertirNumero(7) → 7
+*/
+
+/*void invertirNumero (int valor){
+    if (valor < )
+}*/
+
+
+
+int InvertirNumero(int n) {
+    int invertido = 0;
+    while (n > 0) {
+        invertido = invertido * 10 + n % 10;
+        n /= 10;
+    }
+    return invertido;
+}
+
+int main() {
+    int n;
+    cout << "Ingrese un numero: ";
+    cin >> n;
+    cout << "Invertido: " << InvertirNumero(n) << endl;
+    return 0;
+}
